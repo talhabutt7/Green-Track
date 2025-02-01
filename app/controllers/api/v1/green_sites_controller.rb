@@ -4,7 +4,7 @@ module Api::V1
     before_action :authenticate_api_user!
 
     def create
-      @site = ConservationSite.new(site_params)
+      @site = GreenSite.new(site_params)
       if @site.save
         render json: @site, status: :created
       else

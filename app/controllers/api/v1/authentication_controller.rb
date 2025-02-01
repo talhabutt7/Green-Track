@@ -3,11 +3,13 @@ module Api::V1
     def login
       user = User.find_by_email(params[:email])
       if user&.valid_password?(params[:password])
-        token = user.generate_jwt
+        # Use Warden-JWT-Auth to generate token
+        token = Warden::JWTAuth::UserEncoder.new.call(user, :user, nil).first
         render json: { token: token }
       else
         render json: { error: 'Invalid credentials' }, status: :unauthorized
       end
     end
+
   end
 end
