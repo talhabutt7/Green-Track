@@ -1,3 +1,4 @@
+# spec/requests/api/v1/green_sites_spec.rb
 require 'rails_helper'
 
 RSpec.describe "Api::V1::GreenSites", type: :request do
@@ -13,7 +14,7 @@ RSpec.describe "Api::V1::GreenSites", type: :request do
     it "creates a site with valid JWT" do
       post '/api/v1/green_sites',
            headers: { 'Authorization' => "Bearer #{@token}" },
-           params: { green: valid_attributes }
+           params: { green_site: valid_attributes } # Correct key
       expect(response).to have_http_status(:created)
     end
   end
