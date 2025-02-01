@@ -8,4 +8,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # API Routes
+  namespace :api do
+    namespace :v1 do
+      post 'auth/login', to: 'authentication#login'
+      resources :conservation_sites, only: [:index, :create]
+    end
+  end
+
+  # Frontend Routes
+  devise_for :users
+  resources :green_sites
+  root 'green_sites#index'
 end
