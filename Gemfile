@@ -86,3 +86,5 @@ gem 'hotwire-rails'
 
 # API
 gem 'rack-cors', require: 'rack/cors'
+
+gem 'dotenv-rails'
