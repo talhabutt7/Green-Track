@@ -1,0 +1,2 @@
+class GreenSite < ApplicationRecord
+end
