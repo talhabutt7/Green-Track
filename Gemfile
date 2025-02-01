@@ -68,3 +68,21 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Geospatial
+gem 'activerecord-postgis-adapter'
+
+# Auth
+gem 'devise'
+gem 'devise-jwt'
+
+# Testing (TDD)
+gem 'rspec-rails', group: [:development, :test]
+gem 'factory_bot_rails', group: [:development, :test]
+gem 'shoulda-matchers', group: [:test]
+
+# Hotwire
+gem 'hotwire-rails'
+
+# API
+gem 'rack-cors', require: 'rack/cors'
