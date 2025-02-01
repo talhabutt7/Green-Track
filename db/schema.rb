@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_01_175503) do
   enable_extension "plpgsql"
   enable_extension "postgis"
 
-  create_table "conservation_sites", force: :cascade do |t|
+  create_table "green_sites", force: :cascade do |t|
     t.string "name", null: false
     t.geography "coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.string "taxonomy_code"

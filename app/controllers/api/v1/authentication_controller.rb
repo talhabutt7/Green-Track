@@ -1,4 +1,3 @@
-# app/controllers/api/v1/authentication_controller.rb
 module Api::V1
   class AuthenticationController < ApplicationController
     def login
